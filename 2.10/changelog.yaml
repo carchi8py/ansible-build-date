@@ -1,0 +1,211 @@
+ancestor: 2.9.0
+releases:
+  2.10.0:
+    changes:
+      known_issues:
+      - Due to a limitation in pip, you cannot ``pip install --upgrade`` from ansible-2.9
+        or earlier to ansible-2.10 or higher. Instead, you must explicitly use ``pip
+        uninstall ansible`` before pip installing the new version. If you attempt
+        to upgrade Ansible with pip without first uninstalling, the installer warns
+        you to uninstall first.
+      - 'The individual collections that make up the ansible-2.10.0 package can be
+        viewed independently. However, they are not currently listed by ansible-galaxy.
+        To view these collections with ansible-galaxy, explicitly specify where ansible
+        has installed the collections -- ``COLLECTION_INSTALL=$(python -c ''import
+        ansible, os.path ; print("%s/../ansible_collections" % os.path.dirname(ansible.__file__))'')
+        ansible-galaxy collection list -p "$COLLECTION_INSTALL"``.
+
+        '
+      - 'These fortios modules are not automatically redirected from their 2.9.x names
+        to the new 2.10.x names within collections. You must modify your playbooks
+        to use fully qualified collection names for them. You can use the documentation
+        (https://docs.ansible.com/ansible/2.10/collections/fortinet/fortios/) for
+        the ``fortinet.fortios`` collection to determine what the fully qualified
+        collection names are.
+
+
+        * fortios_address
+
+        * fortios_config
+
+        * fortios_firewall_DoS_policy
+
+        * fortios_firewall_DoS_policy6
+
+        * fortios_ipv4_policy
+
+        * fortios_switch_controller_802_1X_settings
+
+        * fortios_switch_controller_security_policy_802_1X
+
+        * fortios_system_firmware_upgrade
+
+        * fortios_system_nd_proxy
+
+        * fortios_webfilter
+
+        '
+    release_date: '2020-09-22'
+  2.10.0a1:
+    changes:
+      breaking_changes:
+      - cisco.nxos.nxos_igmp_interface - no longer supports the deprecated ``oif_prefix``
+        and ``oif_source`` options. These have been superceeded by ``oif_ps``.
+      - community.grafana.grafana_dashboard - the parameter ``message`` is renamed
+        to ``commit_message`` since ``message`` is used by Ansible Core engine internally.
+      - purestorage.flashblade.purefb_fs - no longer supports the deprecated ``nfs``
+        option. This has been superceeded by ``nfsv3``.
+      deprecated_features:
+      - The vyos.vyos.vyos_static_route module has been deprecated and will be removed
+        in a later release; use vyos.vyos.vyos_static_routes instead.
+      release_summary: 'Release Date: 2020-06-18
+
+
+        `Porting Guide <https://docs.ansible.com/ansible/devel/porting_guides.html>`_
+
+        '
+    release_date: '2020-06-18'
+  2.10.0a2:
+    changes:
+      release_summary: 'Release Date: 2020-07-05
+
+
+        `Porting Guide <https://docs.ansible.com/ansible/devel/porting_guides.html>`_
+
+        '
+    release_date: '2020-07-05'
+  2.10.0a3:
+    changes:
+      release_summary: 'Release Date: 2020-07-16
+
+
+        `Porting Guide <https://docs.ansible.com/ansible/devel/porting_guides.html>`_
+
+        '
+    release_date: '2020-07-16'
+  2.10.0a4:
+    changes:
+      release_summary: 'Release Date: 2020-07-24
+
+
+        `Porting Guide <https://docs.ansible.com/ansible/devel/porting_guides.html>`_
+
+        '
+    release_date: '2020-07-24'
+  2.10.0a5:
+    changes:
+      release_summary: 'Release Date: 2020-07-27
+
+
+        `Porting Guide <https://docs.ansible.com/ansible/devel/porting_guides.html>`_
+
+        '
+    release_date: '2020-07-27'
+  2.10.0a6:
+    changes:
+      release_summary: 'Release Date: 2020-07-27
+
+
+        `Porting Guide <https://docs.ansible.com/ansible/devel/porting_guides.html>`_
+
+        '
+    release_date: '2020-07-27'
+  2.10.0a7:
+    changes:
+      release_summary: 'Release Date: 2020-07-30
+
+
+        `Porting Guide <https://docs.ansible.com/ansible/devel/porting_guides.html>`_
+
+        '
+    release_date: '2020-07-30'
+  2.10.0a8:
+    changes:
+      release_summary: 'Release Date: 2020-08-06
+
+
+        `Porting Guide <https://docs.ansible.com/ansible/devel/porting_guides.html>`_'
+    release_date: '2020-08-06'
+  2.10.0a9:
+    changes:
+      release_summary: 'Release Date: 2020-08-13
+
+
+        `Porting Guide <https://docs.ansible.com/ansible/devel/porting_guides.html>`_'
+    release_date: '2020-08-13'
+  2.10.0b1:
+    changes:
+      release_summary: 'Release Date: 2020-09-01
+
+
+        `Porting Guide <https://docs.ansible.com/ansible/devel/porting_guides.html>`_'
+    release_date: '2020-09-01'
+  2.10.0b2:
+    changes:
+      release_summary: 'Release Date: 2020-09-08
+
+
+        `Porting Guide <https://docs.ansible.com/ansible/devel/porting_guides.html>`_'
+    release_date: '2020-09-08'
+  2.10.0rc1:
+    changes:
+      release_summary: 'Release Date: 2020-09-15
+
+
+        `Porting Guide <https://docs.ansible.com/ansible/devel/porting_guides.html>`_'
+    release_date: '2020-09-15'
+  2.10.1:
+    changes:
+      release_summary: 'Release Date: 2020-10-13
+
+
+        `Porting Guide <https://docs.ansible.com/ansible/devel/porting_guides.html>`_'
+    release_date: '2020-10-13'
+  2.10.2:
+    changes:
+      release_summary: 'Release Date: 2020-11-03
+
+
+        `Porting Guide <https://docs.ansible.com/ansible/devel/porting_guides.html>`_'
+    release_date: '2020-11-03'
+  2.10.3:
+    changes:
+      release_summary: 'Release Date: 2020-11-04
+
+
+        `Porting Guide <https://docs.ansible.com/ansible/devel/porting_guides.html>`_'
+    release_date: '2020-11-04'
+  2.10.4:
+    changes:
+      release_summary: 'Release Date: 2020-12-01
+
+
+        `Porting Guide <https://docs.ansible.com/ansible/devel/porting_guides.html>`_'
+    release_date: '2020-12-01'
+  2.10.5:
+    changes:
+      release_summary: 'Release Date: 2021-01-05
+
+
+        `Porting Guide <https://docs.ansible.com/ansible/devel/porting_guides.html>`_'
+    release_date: '2021-01-05'
+  2.10.6:
+    changes:
+      release_summary: 'Release Date: 2021-01-26
+
+
+        `Porting Guide <https://docs.ansible.com/ansible/devel/porting_guides.html>`_'
+    release_date: '2021-01-26'
+  2.10.7:
+    changes:
+      major_changes:
+      - Restricting the version of the community.okd collection to 1.0.0. The previously
+        included version, 1.0.1, had a dependency on kubernetes.core and thus required
+        the installation of an additional collection that was not included in Ansible
+        2.10. Version 1.0.0 is essentially identical to 1.0.1, except that it uses
+        community.kubernetes, wihch is included in Ansible 2.10.
+      release_summary: 'Release Date: 2021-02-09
+
+
+        `Porting Guide <https://docs.ansible.com/ansible/devel/porting_guides.html>`_'
+    release_date: '2021-02-09'
