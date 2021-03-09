@@ -1,4 +1,4 @@
-_ansible_version: 2.10.0
+_ansible_version: 2.10
 _ansible_base_version: 2.10.1
 netapp.aws: 20.8.0
 netapp.cloudmanager: 21.3.0
